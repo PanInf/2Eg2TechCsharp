@@ -74,6 +74,33 @@ namespace ConsoleApp19
             return Fibo(n - 1) + Fibo(n - 2);
         }
 
+        public static int potega(int n, int x)
+        {
+            if (x == 0)
+            {
+                return 1;
+            }
+            return n * potega(n, x - 1);
+        }
+
+        public static void dec2bin(int n)
+        {
+            if (n>0)
+            {
+                dec2bin(n / 2);
+                Console.Write(n % 2);
+            }
+        }
+
+        public static string dec2bin2(int n)
+        {
+            if (n==0)
+            {
+                return "";
+            }
+            return dec2bin2(n/2) + $"{n % 2}";
+        }
+
         static void Main(string[] args)
         {
             /*
@@ -123,7 +150,27 @@ namespace ConsoleApp19
             Console.WriteLine(Silnia(n));
             */
 
+            // Zad 5
+            /*
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(i+1 + " - " +Fibo(i));
+            }*/
+
+            // Zad 6
+            /*
+            int n = int.Parse(Console.ReadLine());
+            int x = int.Parse(Console.ReadLine());
+            Console.WriteLine(potega(n,x));
+            */
+
+            // Zad 7
+            /*
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine(dec2bin2(n));*/
+
             Console.ReadKey();
         }
-    }   
+    }
 }
